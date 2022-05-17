@@ -8,7 +8,6 @@ const Footer = () => {
       bg='gray.900'
       color='gray.100'
       height='200'
-      width='100vw'
       direction='column'
       alignItems='center'
       justifyContent='center'

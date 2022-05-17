@@ -9,8 +9,7 @@ const CharacterGrid = ({ character }) => {
   useEffect(() => {
     getCharacters(character).then(setCharacters)
   }, [character])
-  console.log('chatacters')
-  console.log(characters)
+
   return (
     <>
       {characters == undefined ? (
