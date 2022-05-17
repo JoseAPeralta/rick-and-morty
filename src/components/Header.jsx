@@ -7,7 +7,6 @@ const Header = () => {
       <Flex
         bg='gray.900'
         height={[20, 100, 150]}
-        width='100vw'
         justifyContent='center'
         alignItems='alignItems'
       >
