@@ -15,11 +15,19 @@ const Footer = () => {
     >
       <Text fontSize='2xl'>
         Created by{' '}
-        <Link href='https://jperalta.dev/' isExternal>
+        <Link
+          href='https://jperalta.dev/'
+          aria-label='Jose Peralta personal web page'
+          isExternal
+        >
           <em>Jose Peralta</em>
         </Link>
       </Text>
-      <Link href='https://github.com/JoseAPeralta/' isExternal>
+      <Link
+        href='https://github.com/JoseAPeralta/'
+        aria-label='Jose Peralta Github profile'
+        isExternal
+      >
         <Icon fontSize='5xl' as={AiFillGithub}></Icon>
       </Link>
     </Flex>

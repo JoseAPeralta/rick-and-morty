@@ -5,9 +5,9 @@ import {
   InputGroup,
   InputRightElement,
   Select,
-  FormControl,
   Button,
   Center,
+  Container,
 } from '@chakra-ui/react'
 import { AiOutlineSearch } from 'react-icons/ai'
 
@@ -31,7 +31,13 @@ const FindCharacter = ({ setCharacter }) => {
 
   return (
     <>
-      <FormControl as='form' w='100%' maxW='1000' onSubmit={handleSubmit}>
+      <Container
+        as='form'
+        role='search'
+        w='100%'
+        maxW='1000'
+        onSubmit={handleSubmit}
+      >
         <InputGroup>
           <Input
             type='text'
@@ -51,6 +57,7 @@ const FindCharacter = ({ setCharacter }) => {
             placeholder='Status'
             p='2'
             name='status'
+            aria-label='status'
             onChange={handleInputChange}
           >
             <option value=''>all</option>
@@ -63,6 +70,7 @@ const FindCharacter = ({ setCharacter }) => {
             placeholder='gender'
             p='2'
             name='gender'
+            aria-label='gender'
             onChange={handleInputChange}
           >
             <option value=''>all</option>
@@ -77,7 +85,7 @@ const FindCharacter = ({ setCharacter }) => {
             Search
           </Button>
         </Center>
-      </FormControl>
+      </Container>
     </>
   )
 }
