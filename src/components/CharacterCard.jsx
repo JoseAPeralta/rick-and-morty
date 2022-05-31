@@ -1,18 +1,30 @@
-import { Image, Box, Center } from '@chakra-ui/react'
-import imagePlaceholder from '../images/cardPlaceholder.jpg'
+import { useState } from 'react'
+import CharacterCardInfo from './CharacterCardInfo'
+import CharacterCardPhoto from './CharacterCardPhoto'
 
-const CharacterCard = ({ name, image }) => {
+const CharacterCard = (props) => {
+  const [showInfo, setShowInfo] = useState(false)
+
+  const handleCardClick = () => {
+    setShowInfo(!showInfo)
+    console.log(props)
+  }
+
   return (
-    <Box borderWidth='2px' borderColor='gray.900' maxWidth='300' bg='tomato'>
-      <Image
-        src={image || imagePlaceholder}
-        alt={image ? `image of ${name}` : 'image placeholder'}
-        width='100%'
-      ></Image>
-      <Center as='p' bg='gray.900' color='gray.100' p='2'>
-        {name}
-      </Center>
-    </Box>
+    <>
+      {showInfo === false ? (
+        <div
+          onClick={handleCardClick}
+          data-testid='character-card-photo-container'
+        >
+          <CharacterCardPhoto {...props}></CharacterCardPhoto>
+        </div>
+      ) : (
+        <div onClick={handleCardClick}>
+          <CharacterCardInfo {...props}></CharacterCardInfo>
+        </div>
+      )}
+    </>
   )
 }
 
