@@ -44,6 +44,7 @@ describe('Component CharacterCard', () => {
 
   test('Should accesible cardPhoto', async () => {
     const { container } = render(<CharacterCard {...characterData} />)
+
     const results = await axe(container)
 
     expect(results).toHaveNoViolations()
