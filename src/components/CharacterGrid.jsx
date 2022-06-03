@@ -1,4 +1,4 @@
-import { Flex, Box, Text } from '@chakra-ui/react'
+import { Flex, Box, Text, Spinner, Center } from '@chakra-ui/react'
 import CharacterCard from './CharacterCard'
 import { useFetchCharacter } from '../hooks/useFetchCharacter'
 
@@ -8,9 +8,18 @@ const CharacterGrid = ({ character }) => {
   return (
     <section>
       {loading ? (
-        <h1 data-testid='loading-component' loading>
-          Loading...
-        </h1>
+        <div data-testid='loading-component' loading>
+          <Center>
+            <Spinner
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='green'
+              size='xl'
+            />
+          </Center>
+          <Center p='3'> Loading...</Center>
+        </div>
       ) : characters ? (
         <Flex
           data-testid='character-grid-component'
