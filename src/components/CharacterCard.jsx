@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Box } from '@chakra-ui/react'
 import CharacterCardInfo from './CharacterCardInfo'
 import CharacterCardPhoto from './CharacterCardPhoto'
 
@@ -7,22 +8,22 @@ const CharacterCard = (props) => {
 
   const handleCardClick = () => {
     setShowInfo(!showInfo)
-    console.log(props)
   }
 
   return (
     <>
       {showInfo === false ? (
-        <div
+        <Box
           onClick={handleCardClick}
           data-testid='character-card-photo-container'
+          h='100%'
         >
           <CharacterCardPhoto {...props}></CharacterCardPhoto>
-        </div>
+        </Box>
       ) : (
-        <div onClick={handleCardClick}>
+        <Box onClick={handleCardClick} h='100%'>
           <CharacterCardInfo {...props}></CharacterCardInfo>
-        </div>
+        </Box>
       )}
     </>
   )

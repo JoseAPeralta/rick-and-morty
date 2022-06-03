@@ -1,4 +1,4 @@
-import { Grid, GridItem, Text } from '@chakra-ui/react'
+import { Flex, Box, Text } from '@chakra-ui/react'
 import CharacterCard from './CharacterCard'
 import { useFetchCharacter } from '../hooks/useFetchCharacter'
 
@@ -12,19 +12,20 @@ const CharacterGrid = ({ character }) => {
           Loading...
         </h1>
       ) : characters ? (
-        <Grid
+        <Flex
           data-testid='character-grid-component'
           as='ul'
           listStyleType='none'
-          templateColumns='repeat(4, 1fr)'
-          gap={6}
+          gap='6'
+          flexWrap='wrap'
+          justify='center'
         >
           {characters.map((character, index) => (
-            <GridItem as='li' key={index}>
+            <Box as='li' key={index} w={{ base: '250px', sm: '300px' }}>
               <CharacterCard {...character}></CharacterCard>
-            </GridItem>
+            </Box>
           ))}
-        </Grid>
+        </Flex>
       ) : (
         <Text
           data-testid='no-character-component'

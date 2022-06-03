@@ -29,6 +29,8 @@ const CharacterCardInfo = ({
         bg='gray.900'
         color='gray.100'
         className='animate__animated animate__flipInY'
+        minHeight='300px'
+        h='100%'
       >
         <Center as='h2' fontSize='xl'>
           {name}
