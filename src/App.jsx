@@ -11,6 +11,7 @@ const App = () => {
     name: '',
     status: '',
     gender: '',
+    page: '',
   })
 
   return (
@@ -27,7 +28,10 @@ const App = () => {
       >
         <FindCharacter setCharacter={setCharacter}></FindCharacter>
         <Divider></Divider>
-        <CharacterGrid character={character}></CharacterGrid>
+        <CharacterGrid
+          character={character}
+          setCharacter={setCharacter}
+        ></CharacterGrid>
       </Flex>
       <Spacer></Spacer>
       <Footer alignSelf='flex-end' />

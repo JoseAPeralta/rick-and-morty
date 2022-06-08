@@ -17,6 +17,7 @@ const CharacterCardPhoto = ({ name, image }) => {
           src={image || imagePlaceholder}
           alt={image ? `image of ${name}` : 'image placeholder'}
           width='100%'
+          height='296px'
         ></Image>
         <Center as='h2' p='2'>
           {name}

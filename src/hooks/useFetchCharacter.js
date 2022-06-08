@@ -3,7 +3,7 @@ import { getCharacters } from '../helpers/getCharacters'
 
 export const useFetchCharacter = (character) => {
   const [state, setState] = useState({
-    characters: [],
+    characters: {},
     loading: true,
   })
 
@@ -15,6 +15,5 @@ export const useFetchCharacter = (character) => {
       })
     })
   }, [character])
-
   return state
 }

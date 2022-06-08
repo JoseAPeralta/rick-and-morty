@@ -40,20 +40,6 @@ describe('Component CharacterGrid', () => {
     })
   })
 
-  // test('Should render pagination button when have more than 20 characters', async () => {
-  //   const character = { name: '', status: '', gender: '' }
-
-  //   render(<CharacterGrid character={character} />)
-
-  //   await waitFor(() => {
-  //     const characterGridComponent = screen.getByTestId(
-  //       'character-grid-component'
-  //     )
-
-  //     expect(characterGridComponent.children.length).toBeLessThanOrEqual(20)
-  //   })
-  // })
-
   test('Should accesible', async () => {
     const character = { name: '', status: '', gender: '' }
 
