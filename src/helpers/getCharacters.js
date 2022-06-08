@@ -4,15 +4,17 @@ export const getCharacters = async ({
   name = '',
   status = '',
   gender = '',
+  page = '',
 }) => {
-  const url = `https://rickandmortyapi.com/api/character/?name=${name}&status=${status}&gender=${gender}`
+  const url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&status=${status}&gender=${gender}`
 
   try {
     const response = await axios.get(url)
-    const { results } = response.data
-    return results
+    const data = response.data
+
+    return data
   } catch (error) {
-    const results = false
-    return results
+    const data = false
+    return data
   }
 }
