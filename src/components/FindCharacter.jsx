@@ -16,6 +16,7 @@ const FindCharacter = ({ setCharacter }) => {
     name: '',
     status: '',
     gender: '',
+    page: 1,
   })
 
   const handleInputChange = (e) => {
